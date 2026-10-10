@@ -3,11 +3,12 @@
   "file": "internal/cli/cli.go",
   "language": "go",
   "tests": {
-    "cmd/go-template-itos-sample/main_test.go": "25c7791b428d496ef053e24de090fe8a4221dea3cee5ea94f5ea5891f732e157",
-    "internal/cli/cli_test.go": "52abace9ae31e82ba96750e462a1c12d1e1c36a43e786795a58ebe9cb141a96b",
-    "internal/cli/completion_test.go": "e5a2efb94994d45b2580e11e919af565e5650f39d7116c388c78fbba98e626e3",
-    "internal/cli/flags_test.go": "cba940b5f7aaa4bc3b7c4c6b2d56d010d063fdd1133880c89764a28cf3e3068a",
-    "internal/count/command/command_test.go": "a0d711b7662e2019a96b5b54962034c5de2a0eebf95e0b894478527e21189810"
+    "cmd/go-template-itos-sample/main_test.go": "070da5ce5882cdecb673d838073d2bd859c32d814c66b459c91dce0eeb47f19a",
+    "internal/cli/cli_test.go": "3768563b7d30c4dbf0a4c1d23f97804b9c5d9d88880c23e79fa2823f917cbc23",
+    "internal/cli/completion_test.go": "11f70468bd9c2c6a021d359ea37e539a200d7d4720a01ff68b669269bec34fda",
+    "internal/cli/flags_test.go": "5cc1969bcee50404a6fd282a32ce930d92c3e90a4a1f731433a9e57192ea43a9",
+    "internal/cli/version_test.go": "2db83b9b8ff7e4662f87c4ce68c7586ceac9a30ce131c3ad540b4c80b48097d9",
+    "internal/count/command/command_test.go": "5a6013835a151ec850b58ab07e9e0329a9555fee6c4ebe6ef00bcb172dd814f0"
   },
   "units": [
     {
@@ -25,7 +26,7 @@
     {
       "namespace": "github.com/donvargax/go-template-itos-sample/internal/cli.UI",
       "name": "Usage",
-      "hash": "03cc374e69f4a02d",
+      "hash": "4f4902aeb55a8fd1",
       "start_line": 58,
       "end_line": 68,
       "killed": 3,
@@ -127,7 +128,7 @@
     {
       "namespace": "github.com/donvargax/go-template-itos-sample/internal/cli.UI",
       "name": "Line",
-      "hash": "b4fb2fb585bb8fa0",
+      "hash": "c1fd4973f7713362",
       "start_line": 96,
       "end_line": 98,
       "killed": 0,

@@ -3,8 +3,8 @@
   "file": "internal/count/command/command.go",
   "language": "go",
   "tests": {
-    "cmd/go-template-itos-sample/main_test.go": "25c7791b428d496ef053e24de090fe8a4221dea3cee5ea94f5ea5891f732e157",
-    "internal/count/command/command_test.go": "a0d711b7662e2019a96b5b54962034c5de2a0eebf95e0b894478527e21189810"
+    "cmd/go-template-itos-sample/main_test.go": "070da5ce5882cdecb673d838073d2bd859c32d814c66b459c91dce0eeb47f19a",
+    "internal/count/command/command_test.go": "5a6013835a151ec850b58ab07e9e0329a9555fee6c4ebe6ef00bcb172dd814f0"
   },
   "units": [
     {

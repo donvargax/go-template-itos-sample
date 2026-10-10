@@ -3,7 +3,8 @@
   "file": "internal/count/disk/files.go",
   "language": "go",
   "tests": {
-    "internal/count/disk/files_test.go": "286f827bf8e420d66753805041777fa06209fe6fa058555a29a46c3c56f071a4"
+    "cmd/go-template-itos-sample/main_test.go": "070da5ce5882cdecb673d838073d2bd859c32d814c66b459c91dce0eeb47f19a",
+    "internal/count/disk/files_test.go": "b8301aae832dc176456c59d11465413e7aebb1d9ab3023c049c78ac26c35eca0"
   },
   "units": [
     {

@@ -3,25 +3,25 @@
   "file": "internal/cli/flags.go",
   "language": "go",
   "tests": {
-    "cmd/go-template-itos-sample/main_test.go": "25c7791b428d496ef053e24de090fe8a4221dea3cee5ea94f5ea5891f732e157",
-    "internal/cli/cli_test.go": "52abace9ae31e82ba96750e462a1c12d1e1c36a43e786795a58ebe9cb141a96b",
-    "internal/cli/completion_test.go": "e5a2efb94994d45b2580e11e919af565e5650f39d7116c388c78fbba98e626e3",
-    "internal/cli/flags_test.go": "6a74267a3b1eaaf1f6d1997f40918a4155028e2b2f2a1c2b3a762020888a68fd",
-    "internal/count/command/command_test.go": "2f205437e0cfcec287ea28df530c923ceb5c7aedc26b3dc246e5341e46312ea3"
+    "cmd/go-template-itos-sample/main_test.go": "070da5ce5882cdecb673d838073d2bd859c32d814c66b459c91dce0eeb47f19a",
+    "internal/cli/cli_test.go": "3768563b7d30c4dbf0a4c1d23f97804b9c5d9d88880c23e79fa2823f917cbc23",
+    "internal/cli/completion_test.go": "11f70468bd9c2c6a021d359ea37e539a200d7d4720a01ff68b669269bec34fda",
+    "internal/cli/flags_test.go": "5cc1969bcee50404a6fd282a32ce930d92c3e90a4a1f731433a9e57192ea43a9",
+    "internal/cli/version_test.go": "2db83b9b8ff7e4662f87c4ce68c7586ceac9a30ce131c3ad540b4c80b48097d9",
+    "internal/count/command/command_test.go": "5a6013835a151ec850b58ab07e9e0329a9555fee6c4ebe6ef00bcb172dd814f0"
   },
   "units": [
     {
       "namespace": "github.com/donvargax/go-template-itos-sample/internal/cli",
       "name": "Flags",
       "hash": "eabee5ddd54ee86f",
-      "start_line": 31,
-      "end_line": 39,
+      "start_line": 33,
+      "end_line": 41,
       "killed": 0,
       "survived": 0,
       "uncovered": 0,
       "sites": 0,
-      "mutants": [],
-      "stale": true
+      "mutants": []
     },
     {
       "namespace": "github.com/donvargax/go-template-itos-sample/internal/cli.tracing",
@@ -76,15 +76,15 @@
       "namespace": "github.com/donvargax/go-template-itos-sample/internal/cli.switchMapper",
       "name": "Decode",
       "hash": "4fde2dc9b1971146",
-      "start_line": 60,
-      "end_line": 65,
+      "start_line": 76,
+      "end_line": 81,
       "killed": 3,
       "survived": 0,
       "uncovered": 0,
       "sites": 3,
       "mutants": [
         {
-          "line": 61,
+          "line": 77,
           "column": 5,
           "offset": 88,
           "original": "!",
@@ -93,7 +93,7 @@
           "scope": "all-tests"
         },
         {
-          "line": 61,
+          "line": 77,
           "column": 20,
           "offset": 103,
           "original": "&&",
@@ -102,7 +102,7 @@
           "scope": "all-tests"
         },
         {
-          "line": 61,
+          "line": 77,
           "column": 44,
           "offset": 127,
           "original": "==",
@@ -110,22 +110,21 @@
           "outcome": "killed",
           "scope": "all-tests"
         }
-      ],
-      "stale": true
+      ]
     },
     {
       "namespace": "github.com/donvargax/go-template-itos-sample/internal/cli.valueMapper",
       "name": "Decode",
       "hash": "aa04fe84c2c3d489",
-      "start_line": 71,
-      "end_line": 79,
+      "start_line": 87,
+      "end_line": 95,
       "killed": 3,
       "survived": 0,
       "uncovered": 0,
       "sites": 3,
       "mutants": [
         {
-          "line": 72,
+          "line": 88,
           "column": 45,
           "offset": 127,
           "original": "!=",
@@ -134,7 +133,7 @@
           "scope": "all-tests"
         },
         {
-          "line": 72,
+          "line": 88,
           "column": 52,
           "offset": 134,
           "original": "&&",
@@ -143,7 +142,7 @@
           "scope": "all-tests"
         },
         {
-          "line": 72,
+          "line": 88,
           "column": 55,
           "offset": 137,
           "original": "!",
@@ -151,22 +150,21 @@
           "outcome": "killed",
           "scope": "all-tests"
         }
-      ],
-      "stale": true
+      ]
     },
     {
       "namespace": "github.com/donvargax/go-template-itos-sample/internal/cli",
       "name": "either",
       "hash": "e6360b1f1d1f8c7a",
-      "start_line": 82,
-      "end_line": 87,
+      "start_line": 98,
+      "end_line": 103,
       "killed": 2,
       "survived": 0,
       "uncovered": 0,
       "sites": 2,
       "mutants": [
         {
-          "line": 83,
+          "line": 99,
           "column": 21,
           "offset": 55,
           "original": "==",
@@ -175,7 +173,7 @@
           "scope": "all-tests"
         },
         {
-          "line": 86,
+          "line": 102,
           "column": 21,
           "offset": 98,
           "original": "+",
@@ -183,8 +181,7 @@
           "outcome": "killed",
           "scope": "all-tests"
         }
-      ],
-      "stale": true
+      ]
     }
   ]
 }

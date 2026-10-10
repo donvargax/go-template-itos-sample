@@ -3,12 +3,12 @@
   "file": "internal/cli/version.go",
   "language": "go",
   "tests": {
-    "cmd/go-template-itos-sample/main_test.go": "818584786d3ee213fbf511ab56f24862a1c4bf9f554a0e2f1b2720f4201947ee",
-    "internal/cli/cli_test.go": "52abace9ae31e82ba96750e462a1c12d1e1c36a43e786795a58ebe9cb141a96b",
-    "internal/cli/completion_test.go": "e5a2efb94994d45b2580e11e919af565e5650f39d7116c388c78fbba98e626e3",
-    "internal/cli/flags_test.go": "6a74267a3b1eaaf1f6d1997f40918a4155028e2b2f2a1c2b3a762020888a68fd",
-    "internal/cli/version_test.go": "290ca6a0bbcc01c23160f93dee4f3e69d860ad04b7fc10ecf1d8c01f8861efb9",
-    "internal/count/command/command_test.go": "2f205437e0cfcec287ea28df530c923ceb5c7aedc26b3dc246e5341e46312ea3"
+    "cmd/go-template-itos-sample/main_test.go": "070da5ce5882cdecb673d838073d2bd859c32d814c66b459c91dce0eeb47f19a",
+    "internal/cli/cli_test.go": "3768563b7d30c4dbf0a4c1d23f97804b9c5d9d88880c23e79fa2823f917cbc23",
+    "internal/cli/completion_test.go": "11f70468bd9c2c6a021d359ea37e539a200d7d4720a01ff68b669269bec34fda",
+    "internal/cli/flags_test.go": "5cc1969bcee50404a6fd282a32ce930d92c3e90a4a1f731433a9e57192ea43a9",
+    "internal/cli/version_test.go": "2db83b9b8ff7e4662f87c4ce68c7586ceac9a30ce131c3ad540b4c80b48097d9",
+    "internal/count/command/command_test.go": "5a6013835a151ec850b58ab07e9e0329a9555fee6c4ebe6ef00bcb172dd814f0"
   },
   "units": [
     {

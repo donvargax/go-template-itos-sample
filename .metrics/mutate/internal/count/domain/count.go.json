@@ -3,7 +3,9 @@
   "file": "internal/count/domain/count.go",
   "language": "go",
   "tests": {
-    "internal/count/domain/count_test.go": "48a3c28ffe7e3194ab29dce6a1d8e3cdebee96a675485800737462ff44ab9c05"
+    "internal/count/command/command_test.go": "5a6013835a151ec850b58ab07e9e0329a9555fee6c4ebe6ef00bcb172dd814f0",
+    "internal/count/domain/count_test.go": "492efc0743026d4b0d2404a9b5ced2831562a49b9eea709e16d01325291517f7",
+    "internal/count/input/input_test.go": "071a3597041b0c515e5849aee2b6af5c1e038387bd6058518568a40e8c82a6a9"
   },
   "units": [
     {
