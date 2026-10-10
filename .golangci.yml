@@ -1,0 +1,134 @@
+version: "2"
+linters:
+  default: standard
+  enable:
+    - depguard
+    - gochecksumtype
+    - gosec
+    - revive
+  settings:
+    # Harvested from github.com/donvargax/itos-template/.golangci.yml with
+    # owner MIT permission (CONTRIBUTORS.md). The ports' failures are sealed
+    # sets (//sumtype:decl), and internal/cli gives each kind its exit code
+    # in one switch per set (docs/CLI.md rule 32): a switch that leaves a
+    # kind out is refused, and a default case does not count as naming them.
+    # tools/bin/architecture-check proves it with compile-valid fixtures.
+    gochecksumtype:
+      default-signifies-exhaustive: false
+    # Layer/production-I/O/mock rules harvested from
+    # github.com/donvargax/itos-template/.golangci.yml with owner MIT
+    # permission (CONTRIBUTORS.md), adapted to this module and layout.
+    # tools/bin/architecture-check proves these with compile-valid fixtures.
+    depguard:
+      rules:
+        domain:
+          list-mode: lax
+          files:
+            - "**/internal/count/domain/**"
+          allow:
+            - github.com/donvargax/go-template-itos-sample/internal/count/domain$
+            - github.com/donvargax/go-template-itos-sample/internal/count/domain/
+            - github.com/donvargax/go-template-itos-sample/internal/count/port$
+            - github.com/donvargax/go-template-itos-sample/internal/count/port/
+          deny:
+            - pkg: github.com/donvargax/go-template-itos-sample
+              desc: "domain code and tests import domain/ports, never application, commands or concrete adapters"
+        # Separate from domain so domain-coverage still measures behavior,
+        # not the ports/fakes. Includes porttest and tests in both layers.
+        ports:
+          list-mode: lax
+          files:
+            - "**/internal/count/port/**"
+          allow:
+            - github.com/donvargax/go-template-itos-sample/internal/count/domain$
+            - github.com/donvargax/go-template-itos-sample/internal/count/domain/
+            - github.com/donvargax/go-template-itos-sample/internal/count/port$
+            - github.com/donvargax/go-template-itos-sample/internal/count/port/
+          deny:
+            - pkg: github.com/donvargax/go-template-itos-sample
+              desc: "ports and their tests import no application, commands or concrete adapters"
+        domain-io:
+          files:
+            - "**/internal/count/domain/**"
+            - "**/internal/count/port/**"
+            - "!$test"
+          deny:
+            - pkg: os
+              desc: "production domain/ports reach files and processes through ports; tests may read fixtures"
+            - pkg: net
+              desc: "production domain/ports reach networks through ports"
+        # The count command is the slice's application handler: it carries
+        # the command line's values to the domain through its ports and hands
+        # the result to internal/cli. Its code and tests import no concrete
+        # adapter; cmd wires disk and input into it.
+        application:
+          list-mode: lax
+          files:
+            - "**/internal/count/command/**"
+          allow:
+            - github.com/donvargax/go-template-itos-sample/internal/count/command$
+            - github.com/donvargax/go-template-itos-sample/internal/count/domain$
+            - github.com/donvargax/go-template-itos-sample/internal/count/domain/
+            - github.com/donvargax/go-template-itos-sample/internal/count/port$
+            - github.com/donvargax/go-template-itos-sample/internal/count/port/
+            - github.com/donvargax/go-template-itos-sample/internal/cli$
+          deny:
+            - pkg: github.com/donvargax/go-template-itos-sample
+              desc: "the count command imports the domain, its ports and internal/cli, never a concrete adapter; cmd wires those"
+        infra:
+          list-mode: lax
+          files:
+            - "**/internal/count/disk/**"
+            - "**/internal/count/input/**"
+            - "!$test"
+          allow:
+            - github.com/donvargax/go-template-itos-sample/internal/count/port$
+          deny:
+            - pkg: github.com/donvargax/go-template-itos-sample
+              desc: "production adapters import only project ports, not domain, application, other adapters or test fakes"
+        mocks:
+          files:
+            - $all
+          deny:
+            - pkg: github.com/golang/mock
+              desc: "use our own porttest fakes/stubs, never mocking libraries"
+            - pkg: go.uber.org/mock
+              desc: "use our own porttest fakes/stubs, never mocking libraries"
+            - pkg: github.com/stretchr/testify/mock
+              desc: "use our own porttest fakes/stubs, never mocking libraries"
+            - pkg: github.com/vektra/mockery
+              desc: "use our own porttest fakes/stubs, never mocking libraries"
+            - pkg: github.com/maxbrunsfeld/counterfeiter
+              desc: "use our own porttest fakes/stubs, never mocking libraries"
+        rapid:
+          files:
+            - $all
+            - "!**/internal/count/domain/*_test.go"
+          deny:
+            - pkg: pgregory.net/rapid
+              desc: "rapid is used only by domain property tests"
+        # kong is the UI's, harvested from itos-template's kong rule: here
+        # the UI is the entry point and internal/cli. The count command
+        # carries kong's struct tags, which need no import of kong.
+        kong:
+          files:
+            - $all
+            - "!**/cmd/**"
+            - "!**/internal/cli/**"
+          deny:
+            - pkg: github.com/alecthomas/kong
+              desc: "kong stays in the UI: cmd and internal/cli"
+    revive:
+      rules:
+        - name: file-length-limit
+          arguments:
+            - max: 600
+              skipComments: true
+              skipBlankLines: true
+  exclusions:
+    rules:
+      - path: _test\.go$
+        linters: [gosec]
+formatters:
+  enable:
+    - gofmt
