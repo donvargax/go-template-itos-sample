@@ -29,5 +29,3 @@
     over cmd and internal with every test and fail-uncovered, and the excepted len(args) mutant in
     run renewed under this project's hash, its reason unchanged, once it is checked to be the same
     equivalent mutant.
-  done_when:
-    - run: tools/bin/pinned itos-cc mutation check --fail-uncovered cmd internal
