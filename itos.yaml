@@ -45,6 +45,7 @@ commits:
       in_place_of: { Task: [test, docs, chore] }
   scopes:
     docs: { only: ["**/*.md", "docs/**", "tasks/**"] }
+  since: 3d9ccf85bd0e228b62718f3a5b045fbf20a7c0a1
 
 # The scenarios, features/*.feature, run by godog through go test against the binary built
 # from this tree (features/README.md). -scenarios= is a regular expression over the scenarios'
