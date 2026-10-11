@@ -18,3 +18,21 @@ items:
     status: done
     depends_on: []
     kind: task
+  - id: T-3
+    title: Take the template release v0.1.0 by itos-template update
+    phase: 1
+    owner: null
+    status: todo
+    depends_on: []
+    kind: task
+    why: >
+      This project was rendered from the template's branch heads before the template had a release,
+      and it is behind on every template change since: the engineering guide's paragraph on made
+      projects, the documents' wording, doc-caps skipping a missing document and the itos pin its
+      workflows' action names. itos-template update brings it to v0.1.0, the template's first
+      release, in one step: a merge of the render it was made from and the release's render, its own
+      changes kept where they conflict (its docs/go.md section, its mutation records and
+      itos-cc.yaml), and itos-policy.yaml, which setup removed when it became this project's
+      itos.yaml, left removed. Its itos.yaml pin moves to the version the release's policy names, so
+      the workflows' donvargax/itos action and the pin agree, and AGENTS.md's rules are regenerated
+      from its own config. The update is no release of this project.
