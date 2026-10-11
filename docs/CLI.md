@@ -32,10 +32,10 @@ Scripts can rely on two things only (ITOS):
 
 All plain output is for people and can change in any release. A script reads `--json` and the
 exit code, never the plain output and never a `message`. A change to the contract is a breaking
-change, and a breaking change makes a major release. Once there is a release, CI is meant to run
-the last release's scenarios against the new binary. Not yet: CI's release job runs only on a
-push to `main`, after the ci and platform jobs pass there, and no release has been cut from a
-made project's `main` yet, so there is no release to run them against.
+change, and a breaking change makes a major release. CI is meant to run the last release's
+scenarios against the new binary. Not yet: CI's release job cuts a release on a push to `main`,
+after the ci and platform jobs pass there, but no job runs the last release's scenarios against
+the binary that follows it.
 
 ### Exit codes
 
@@ -124,7 +124,8 @@ may repeat, but no command has one yet.
     for stdin), `lines` and `words`. `version --json` prints `ok`, `version` and `commit`, the
     commit left out when the build knows none. (CLIG `#output`; ITOS.)
 28. When the plain output looks like data, write a line on stderr telling the reader to use
-    `--json` in scripts.
+    `--json` in scripts. `version`'s two short lines are not data a script scrapes, so it prints
+    no hint; `version --json` is there for scripts.
 29. With `--json`, print an object for every failure too, a usage error included: `"ok": false`
     and a `problems` list, each with its `rule`, `message` and `fix`. (CLIG `#output`; ITOS.)
 30. Do not use colour, and pass `NO_COLOR` on to any program the CLI runs. (CLIG `#output`,

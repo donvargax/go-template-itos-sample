@@ -1,11 +1,11 @@
 # Go design and quality
 
 This guide adds what is specific to Go to `docs/engineering.md`, which it does not repeat.
-It describes what `go/cli` actually holds and checks: the Go stack's foundation and the
-CLI feature built on it. The feature's interface contract belongs in its own guide. The
+It describes what this project actually holds and checks: the Go foundation and the command
+line built on it. The command line's interface contract belongs in its own guide. The
 policy is harvested from [itos-template](https://github.com/donvargax/itos-template) (its
 decisions on thin layers over a domain, unit tests with fakes, rapid properties and the
-OS as a value), adapted to this module with the owner's permission (`CONTRIBUTORS.md`).
+OS as a value), adapted to this module with its owner's permission (`CONTRIBUTORS.md`).
 
 ## Packages
 
@@ -79,7 +79,7 @@ Properties use `pgregory.net/rapid` and live in the domain's tests. The counting
 joins newline-terminated pieces and checks that their counts add. Arbitrary concatenation
 can join two words, so it is not promised to be additive. Every run sets
 `RAPID_CHECKS=1`: one new random case per property, as fast as an example test, with the
-seed printed on failure. This branch has no scheduled high-count run.
+seed printed on failure. This project has no scheduled high-count run.
 
 Tests run on Linux, macOS and Windows in CI's platform jobs. The import-boundary self-test
 runs there as well, because it checks paths and diagnostics that differ by platform.
@@ -125,7 +125,7 @@ Tools are pinned:
 
 `docs/upgrading.md` says how to move any of these pins.
 
-## Made projects
+## Setup
 
 `itos-template.yaml` declares what every render must pass. The root check is the pinned
 gitleaks credential scan. The `cli` feature's checks repeat this branch's checks, the
